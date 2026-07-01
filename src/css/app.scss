@@ -1,0 +1,101 @@
+// Custom theme utilities and variables
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-primary: #d90429;
+  --color-dark-page: #09090b;
+  --color-card-bg: rgba(24, 24, 27, 0.7);
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-glow: rgba(217, 4, 41, 0.15);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-dark-page);
+  color: #f4f4f5;
+  overflow-x: hidden;
+}
+
+// Glassmorphism effect
+.glass-card {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(217, 4, 41, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(217, 4, 41, 0.05);
+}
+
+// Red glowing glow effects
+.glow-effect {
+  position: relative;
+}
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(217, 4, 41, 0.25) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+// Custom typography adjustments
+.text-gradient-red {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f4f5 50%, #d90429 100%);
+  -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-full-red {
+  background: linear-gradient(135deg, #ff334b 0%, #d90429 100%);
+  -webkit-background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Slick button styles
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d90429;
+}
